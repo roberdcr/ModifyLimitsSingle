@@ -1,0 +1,1 @@
+INSERT INTO card (id, type, buyLimitDiary, buyLimitMonthly, cashLimitDiary, cashLimitMonthly) values(1, 'CREDIT', 100.00, 1000.00, 100.00, 1000.00);
