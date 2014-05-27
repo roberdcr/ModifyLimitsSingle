@@ -6,20 +6,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<bean id="productManager" class="es.unileon.ulebank.payment.service.SimpleCardManager">
-		<property name="card" ref="product1" />
-	</bean>
-
-	<bean id="product1" class="es.unileon.ulebank.payment.domain.Card">
-		<property name="cardNumber" value="1" />
-		<property name="type" value="CREDIT" />
-		<property name="buyLimitDiary" value="100.00" />
-		<property name="buyLimitMonthly" value="1000.00" />
-		<property name="cashLimitDiary" value="100.00" />
-		<property name="cashLimitMonthly" value="1000.00" />
-	</bean>
-
-
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />

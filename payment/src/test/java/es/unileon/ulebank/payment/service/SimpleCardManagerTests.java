@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.unileon.ulebank.payment.domain.Card;
+import es.unileon.ulebank.payment.repository.CardDao;
+import es.unileon.ulebank.payment.repository.InMemoryProductDao;
 
 public class SimpleCardManagerTests {
 
@@ -24,18 +26,21 @@ public class SimpleCardManagerTests {
 	        product.setBuyLimitMonthly(1000.00);
 	        product.setCashLimitDiary(100.00);
 	        product.setCashLimitMonthly(1000.00);
+	        
+	        CardDao productDao = new InMemoryProductDao(product);
+	        productManager.setCardDao(productDao);
 
 	    }
 
 	    @Test
 	    public void testGetProductsWithNoProducts() {
 	        productManager = new SimpleCardManager();
+	        productManager.setCardDao(new InMemoryProductDao(null));
 	        assertNull(productManager.getCard());
 	    }
 	    
 	    @Test
 	    public void testChangeBuyLimits() {
-	    	productManager.setCard(product);
 	        productManager.changeBuyLimits(150.00, 1500.00);
 
 	        assertEquals(150.00, product.getBuyLimitDiary(), 0);
@@ -44,7 +49,6 @@ public class SimpleCardManagerTests {
 	    
 	    @Test
 	    public void testChangeCashLimits() {
-	    	productManager.setCard(product);
 	        productManager.changeCashLimits(150.00, 1500.00);
 
 	        assertEquals(150.00, product.getCashLimitDiary(), 0);
