@@ -9,14 +9,24 @@ import es.unileon.ulebank.payment.repository.CardDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase que implementa el manejador de tarjetas
+ * @author Rober dCR
+ *
+ */
 @Component
 public class SimpleCardManager implements CardManager {
 
     private static final long serialVersionUID = 1L;
 
+    // Variable que permite la persistencia en la BBDD 
     @Autowired
     private CardDao cardDao;
 
+    /**
+     * Metodo para inyectar el Dao 
+     * @param cardDao
+     */
     public void setCardDao(CardDao cardDao) {
         this.cardDao = cardDao;
     }

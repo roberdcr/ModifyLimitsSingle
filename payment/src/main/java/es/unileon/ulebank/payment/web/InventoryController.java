@@ -18,7 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.ulebank.payment.service.CardManager;
 
-
+/**
+ * Class Controller of changeLimits.jsp
+ * @author Rober dCR
+ * @date 10/05/2014
+ * @brief Controller for resolve the petitions of changeLimits.jsp
+ */
 @Controller
 public class InventoryController {
 

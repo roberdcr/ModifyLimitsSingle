@@ -5,6 +5,12 @@ import javax.validation.constraints.Min;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+/**
+ * Clase ChangeLimit
+ * @author Rober dCR
+ * @date 27/05/2014
+ * @brief Clase que nos permite obtener los datos introducidos en buyLimit.jsp y cashLimit.jsp
+ */
 public class ChangeLimit {
 
 	 /** Logger for this class and subclasses */

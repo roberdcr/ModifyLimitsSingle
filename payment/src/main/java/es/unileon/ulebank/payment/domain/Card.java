@@ -7,6 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Clase tarjeta
+ * @author Rober dCR
+ * @date 27/05/2014
+ * @brief POJO que implementa los atributos necesarios de la tarjeta para realizar el ejemplo sencillo
+ */
 @Entity
 @Table(name="card") 
 public class Card implements Serializable {

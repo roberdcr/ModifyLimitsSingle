@@ -8,7 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.unileon.ulebank.payment.domain.Card;
 
-@Repository(value = "cardDao")
+/**
+ * Clase para el acceso a la BBDD
+ * @author Rober dCR
+ * @date 27/05/2014
+ * @brief Clase que implementa los métodos de la interface CardDao para la lectura/escritura
+ * de las tarjetas en la base de datos
+ */
+@Repository(value = "cardDao") //permite creacion automatica de beans de acceso a datos 
 public class JPACardDao implements CardDao {
 
     private EntityManager em = null;
